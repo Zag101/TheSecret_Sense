@@ -12,23 +12,20 @@
             background: black;
             color: white;
             text-align: center;
+            background-image: url('A_mysterious_and_elegant_masquerade_theme_backgrou.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         .container {
             width: 80%;
             margin: auto;
             padding: 50px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
         }
         h1 {
             font-size: 50px;
-        }
-        .countdown {
-            font-size: 30px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-        .mask {
-            width: 150px;
-            height: auto;
         }
         .btn {
             background: crimson;
@@ -46,25 +43,7 @@
     <div class="container">
         <h1>Benvenuti nella Land</h1>
         <p>Un mondo di mistero e seduzione ti aspetta...</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Venetian_masks_2.jpg/800px-Venetian_masks_2.jpg" class="mask">
-        <p class="countdown" id="countdown"></p>
         <a href="#" class="btn">Iscriviti ora</a>
     </div>
-
-    <script>
-        function countdown() {
-            const targetDate = new Date("2025-03-10").getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const difference = targetDate - now;
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                document.getElementById("countdown").innerHTML = `Apertura in: ${days} giorni, ${hours} ore, ${minutes} min, ${seconds} sec`;
-            }, 1000);
-        }
-        countdown();
-    </script>
 </body>
 </html>
