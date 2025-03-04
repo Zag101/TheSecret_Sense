@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuti nella Land</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        .countdown {
+            font-size: 30px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .mask {
+            width: 150px;
+            height: auto;
+        }
+        .btn {
+            background: crimson;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benvenuti nella Land</h1>
+        <p>Un mondo di mistero e seduzione ti aspetta...</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Venetian_masks_2.jpg/800px-Venetian_masks_2.jpg" class="mask">
+        <p class="countdown" id="countdown"></p>
+        <a href="#" class="btn">Iscriviti ora</a>
+    </div>
+
+    <script>
+        function countdown() {
+            const targetDate = new Date("2025-03-10").getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `Apertura in: ${days} giorni, ${hours} ore, ${minutes} min, ${seconds} sec`;
+            }, 1000);
+        }
+        countdown();
+    </script>
+</body>
+</html>
